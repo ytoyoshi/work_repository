@@ -4,16 +4,18 @@ import string
 
 import termcolor
 
+import configparser
+
+config = configparser.ConfigParser()
+
 def get_template_path():
     """Return the pass of template's directory"""
     tempalte_dir_path = None
+    
     try:
-        from roboter import settings
-
-        if settings.TEMPLATE_PATH:
-            tempalte_dir_path = settings.TEMPLATE_PATH
-    except ImportError:
-        pass
+        import roboter.settings as SETTINGS
+        tempalte_dir_path = SETTINGS.TEMPLATE_PATH
+    except: ImportError
 
     if not tempalte_dir_path:
         basedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -5,7 +5,6 @@ def talking():
     """Function to speak with Robot"""
     talking_robot = robot.Robot()
     talking_robot.hello()
-    print('###')
+    # TODO Add csv method
     talking_robot.goodbye()
-    print('###')
     

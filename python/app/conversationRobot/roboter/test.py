@@ -1,6 +1,6 @@
-import os
+import configparser
 
-a = 'aaa'
-a.join(os.linesep)
-print(a)
-input(a) .join(os.linesep)
+conf = configparser.ConfigParser()
+
+conf.read('config.ini')
+print(conf['FILE_PATH'])
