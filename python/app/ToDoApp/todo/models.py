@@ -15,7 +15,7 @@ class TodoModel(models.Model):
         COMPLETE = "1", gettext_lazy("Complete")
 
     title = models.CharField(max_length=100)
-    memo = models.TextField()
+    memo = models.TextField(null=True)
     priority = models.CharField(
         max_length=1, choices=PriorityType.choices, default=PriorityType.MEDIUM
     )
